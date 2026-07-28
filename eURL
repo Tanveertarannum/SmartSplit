@@ -1,0 +1,23 @@
+[35mbackend/src/api/api.js[m[36m:[mconst API = [1;31maxios.create[m({
+[35mfrontend/src/api/api.js[m[36m:[mconst API = [1;31maxios.create[m({
+[35mnode_modules/axios/MIGRATION_GUIDE.md[m[36m:[m  const api = [1;31maxios.create[m();
+[35mnode_modules/axios/MIGRATION_GUIDE.md[m[36m:[mconst api = [1;31maxios.create[m({
+[35mnode_modules/axios/MIGRATION_GUIDE.md[m[36m:[mconst api = [1;31maxios.create[m({
+[35mnode_modules/axios/MIGRATION_GUIDE.md[m[36m:[m  v1: [1;31maxios.create[m({
+[35mnode_modules/axios/MIGRATION_GUIDE.md[m[36m:[m  legacy: createLegacyWrapper([1;31maxios.create[m({
+[35mnode_modules/axios/MIGRATION_GUIDE.md[m[36m:[mconst api = [1;31maxios.create[m();
+[35mnode_modules/axios/README.md[m[36m:[m##### [1;31maxios.create[m([config])
+[35mnode_modules/axios/README.md[m[36m:[mconst instance = [1;31maxios.create[m({
+[35mnode_modules/axios/README.md[m[36m:[mconst client = [1;31maxios.create[m({
+[35mnode_modules/axios/README.md[m[36m:[mconst instance = [1;31maxios.create[m({
+[35mnode_modules/axios/README.md[m[36m:[mconst instance = [1;31maxios.create[m();
+[35mnode_modules/axios/README.md[m[36m:[mconst instance = [1;31maxios.create[m();
+[35mnode_modules/axios/README.md[m[36m:[mconst instance = [1;31maxios.create[m();
+[35mnode_modules/axios/README.md[m[36m:[mconst instance = [1;31maxios.create[m();
+[35mnode_modules/axios/README.md[m[36m:[mconst instance = [1;31maxios.create[m();
+[35mnode_modules/axios/README.md[m[36m:[mconst instance = [1;31maxios.create[m();
+[35mnode_modules/axios/README.md[m[36m:[mconst api = [1;31maxios.create[m();
+[35mnode_modules/axios/README.md[m[36m:[mconst fetchAxios = [1;31maxios.create[m({
+[35mnode_modules/axios/README.md[m[36m:[mconst instance = [1;31maxios.create[m({
+[35mnode_modules/axios/README.md[m[36m:[mconst instance = [1;31maxios.create[m({
+[35mnode_modules/axios/README.md[m[36m:[mconst apiClient: AxiosInstance = [1;31maxios.create[m({

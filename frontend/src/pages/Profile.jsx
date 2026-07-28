@@ -126,7 +126,7 @@ function Profile() {
               {avatar ? (
 
                 <img
-                  src={`http://localhost:5000${avatar}`}
+                    src={`https://smartsplit-production-1b0a.up.railway.app${avatar}`}
                   alt="avatar"
                   className="avatar-image"
                 />
