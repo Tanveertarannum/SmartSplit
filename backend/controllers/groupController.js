@@ -1,4 +1,4 @@
-const ba = require("../models/Group");
+const Group = require("../models/Group");
 const Expense = require("../models/Expense");
 
 // Create Group
