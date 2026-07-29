@@ -1,10 +1,13 @@
-const Group = require("../models/Group");
+const ba = require("../models/Group");
 const Expense = require("../models/Expense");
 
 // Create Group
 const createGroup = async (req, res) => {
   try {
-    const group = await Group.create(req.body);
+   const group = await Group.create({
+  ...req.body,
+  owner: req.body.owner,
+});
     res.status(201).json(group);
   } catch (error) {
     res.status(500).json({
@@ -16,8 +19,11 @@ const createGroup = async (req, res) => {
 // Get All Groups with Expenses
 const getGroups = async (req, res) => {
   try {
+const userId = req.query.userId;
 
-    const groups = await Group.find();
+const groups = await Group.find({
+  owner: userId,
+});
 
     const result = await Promise.all(
 

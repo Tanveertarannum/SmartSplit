@@ -20,7 +20,13 @@ function AppProvider({ children }) {
 
     try {
 
-      const res = await API.get("/groups");
+      const user = JSON.parse(localStorage.getItem("user"));
+
+      if (!user) return;
+
+      const res = await API.get(
+        `/groups?userId=${user._id}`
+      );
 
       const groupsData = await Promise.all(
 
@@ -64,7 +70,12 @@ function AppProvider({ children }) {
 
     try {
 
-      await API.post("/groups", group);
+      const user = JSON.parse(localStorage.getItem("user"));
+
+      await API.post("/groups", {
+        ...group,
+        owner: user._id,
+      });
 
       const notifications =
         JSON.parse(
