@@ -1,143 +1,74 @@
 import { useState } from "react";
 
-function CreateGroupModal({
-  closeModal,
-  addGroup,
-}) {
-
-  const [name, setName] =
-    useState("");
-
-  const [budget, setBudget] =
-    useState("");
-
-  const [member, setMember] =
-    useState("");
-
-  const [members, setMembers] =
-    useState([]);
+function CreateGroupModal({ closeModal, addGroup }) {
+  const [name, setName] = useState("");
+  const [budget, setBudget] = useState("");
+  const [member, setMember] = useState("");
+  const [members, setMembers] = useState([]);
 
   const addMember = () => {
-
-    if (
-      member.trim() !== ""
-    ) {
-
-      setMembers([
-        ...members,
-        member,
-      ]);
-
+    if (member.trim() !== "") {
+      setMembers([...members, member]);
       setMember("");
     }
   };
 
   const handleSubmit = () => {
+    const user = JSON.parse(localStorage.getItem("user"));
 
-    if (
-      !name ||
-      !budget ||
-      members.length === 0
-    ) {
-      alert(
-        "Fill all fields"
-      );
+    if (!name || !budget || members.length === 0) {
+      alert("Fill all fields");
       return;
     }
 
     addGroup({
       name,
-      budget:
-        Number(budget),
+      budget: Number(budget),
       members,
+      owner: user._id,
     });
 
     closeModal();
   };
 
   return (
-
     <div className="modal-overlay">
-
       <div className="modal glass">
-
-        <h2>
-          ✨ Create Group
-        </h2>
+        <h2>✨ Create Group</h2>
 
         <input
           type="text"
           placeholder="Group Name"
           value={name}
-          onChange={(e) =>
-            setName(
-              e.target.value
-            )
-          }
+          onChange={(e) => setName(e.target.value)}
         />
 
         <input
           type="number"
           placeholder="Budget"
           value={budget}
-          onChange={(e) =>
-            setBudget(
-              e.target.value
-            )
-          }
+          onChange={(e) => setBudget(e.target.value)}
         />
 
-        <div
-          style={{
-            display: "flex",
-            gap: "10px",
-          }}
-        >
-
+        <div style={{ display: "flex", gap: "10px" }}>
           <input
             type="text"
             placeholder="Member Name"
             value={member}
-            onChange={(e) =>
-              setMember(
-                e.target.value
-              )
-            }
+            onChange={(e) => setMember(e.target.value)}
           />
 
-          <button
-            className="btn"
-            onClick={
-              addMember
-            }
-          >
+          <button className="btn" onClick={addMember}>
             Add
           </button>
-
         </div>
 
-        <div
-          style={{
-            marginTop: "15px",
-          }}
-        >
-
-          {members.map(
-            (
-              member,
-              index
-            ) => (
-
-              <span
-                key={index}
-                className="member-chip"
-              >
-                {member}
-              </span>
-
-            )
-          )}
-
+        <div style={{ marginTop: "15px" }}>
+          {members.map((member, index) => (
+            <span key={index} className="member-chip">
+              {member}
+            </span>
+          ))}
         </div>
 
         <div
@@ -147,33 +78,17 @@ function CreateGroupModal({
             marginTop: "20px",
           }}
         >
-
-          <button
-            className="btn"
-            onClick={
-              handleSubmit
-            }
-          >
+          <button className="btn" onClick={handleSubmit}>
             Create
           </button>
 
-          <button
-            className="btn"
-            onClick={
-              closeModal
-            }
-          >
+          <button className="btn" onClick={closeModal}>
             Cancel
           </button>
-
         </div>
-
       </div>
-
     </div>
-
   );
-
 }
 
 export default CreateGroupModal;
