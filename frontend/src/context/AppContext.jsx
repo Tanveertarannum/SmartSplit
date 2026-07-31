@@ -11,7 +11,13 @@ export const AppContext = createContext();
 function AppProvider({ children }) {
 
   const [groups, setGroups] = useState([]);
+const addGroup = async (group) => {
+  console.log(group);
 
+  await API.post("/groups", group);
+
+  fetchGroups();
+};
   // ==========================
   // Fetch Groups
   // ==========================
